@@ -2,7 +2,7 @@ FROM golang:latest
 
 LABEL Aleksandar Krsteski "krsteski_aleksandar@hotmail.com"
 
-RUN apt-get update && apt-get upgrade -yqq && apt-get install tmux -yqq apt-get autoremove -y
+RUN apt-get update && apt-get upgrade -yqq && apt-get install tmux -yqq && apt-get autoremove -y
 
 ARG user=acika
 ARG uid=1000
