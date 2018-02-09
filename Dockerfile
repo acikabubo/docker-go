@@ -2,7 +2,12 @@ FROM golang:latest
 
 LABEL Aleksandar Krsteski "krsteski_aleksandar@hotmail.com"
 
-RUN apt-get update && apt-get upgrade -yqq && apt-get install tmux -yqq && apt-get autoremove -y
+ENV LANG=C.UTF-8
+
+RUN apt-get update -qq  && \
+    apt-get upgrade -yqq && \
+    apt-get install tmux -yqq && \
+    apt-get autoremove -y
 
 ARG user=acika
 ARG uid=1000
@@ -14,3 +19,5 @@ RUN useradd -ms /bin/bash -u $uid -g $gid $user
 USER $user
 
 WORKDIR /go
+
+CMD ['tmux']
