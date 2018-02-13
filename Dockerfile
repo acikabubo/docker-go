@@ -20,4 +20,4 @@ USER $user
 
 WORKDIR /go
 
-CMD ['tmux']
+ENTRYPOINT tmux
