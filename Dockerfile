@@ -6,7 +6,7 @@ ENV LANG=C.UTF-8
 
 RUN apt-get update -qq  && \
     apt-get upgrade -yqq && \
-    apt-get install tmux -yqq && \
+#    apt-get install tmux -yqq && \
     apt-get autoremove -y
 
 ARG user=acika
@@ -19,5 +19,3 @@ RUN useradd -ms /bin/bash -u $uid -g $gid $user
 USER $user
 
 WORKDIR /go
-
-ENTRYPOINT tmux
